@@ -1,0 +1,73 @@
+
+{% extends 'services/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'services/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO VIDEO SECTION -->
+<section class="hero-video" id="home">
+
+    <!-- Background video -->
+    <video class="hero-video-bg"
+           autoplay
+           muted
+           loop
+           playsinline
+           aria-hidden="true">
+        <source src="{% static 'services/videos/hero-waves.mp4' %}"
+                type="video/mp4">
+    </video>
+
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="container hero-content">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <span class="hero-label">
+                    PROFESSIONAL BUSINESS SOLUTIONS
+                </span>
+
+                <h1 class="hero-title">
+                    {{ settings.company_name|default:"Your Business" }}
+                </h1>
+
+                <p class="hero-description">
+                    {{ settings.tagline|default:"Quality services and reliable solutions tailored to your needs." }}
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+
+                    <a href="#services" class="btn hero-btn-primary">
+                        Explore Services
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+
+                    <a href="#contact" class="btn hero-btn-outline">
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll">
+        <i class="bi bi-chevron-down"></i>
+    </div>
+
+</section>
+
+{% include 'services/services.html' %}
+{% include 'services/projects.html' %}
+{% include 'services/about.html' %}
+
+{% endblock %}

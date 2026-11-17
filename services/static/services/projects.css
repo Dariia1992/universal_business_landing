@@ -1,0 +1,238 @@
+
+/* =====================================
+   PROJECTS SECTION
+===================================== */
+
+.projects-section {
+    padding: var(--section-spacing, 80px) 0;
+    background: var(--color-light, #f7f8fa);
+    color: var(--color-text, #171923);
+}
+
+/* HEADER */
+
+.projects-label {
+    display: inline-block;
+    color: var(--color-accent, #8959ed);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.projects-heading {
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+    color: var(--color-text, #171923);
+    margin: 12px 0;
+    letter-spacing: -1px;
+}
+
+.projects-heading span {
+    color: var(--color-accent, #8959ed);
+}
+
+.projects-subtitle {
+    color: var(--color-muted, #777e8c);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* =====================================
+   CAROUSEL
+===================================== */
+
+#projectsCarousel {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+#projectsCarousel .carousel-inner {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(16, 24, 39, 0.08);
+}
+
+/* CARD */
+
+#projectsCarousel .project-slide {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* IMAGE */
+
+#projectsCarousel .project-image {
+    width: 100%;
+    height: 270px;
+    background: #f1f1f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#projectsCarousel .project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* PLACEHOLDER */
+
+#projectsCarousel .project-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        #e5e7f0,
+        #c8b8ef
+    );
+}
+
+#projectsCarousel .project-placeholder i {
+    font-size: 45px;
+    color: var(--color-accent, #8959ed);
+}
+
+/* =====================================
+   PROJECT CONTENT
+===================================== */
+
+#projectsCarousel .project-content {
+    padding: 20px 24px 24px;
+    text-align: center;
+}
+
+#projectsCarousel .project-content h3 {
+    color: var(--color-text, #171923);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+#projectsCarousel .project-content p {
+    color: var(--color-muted, #777e8c);
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+/* =====================================
+   CAROUSEL NAVIGATION
+===================================== */
+
+#projectsCarousel .carousel-control-prev,
+#projectsCarousel .carousel-control-next {
+    position: absolute;
+    top: 115px;
+    bottom: auto;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    color: #171923;
+
+    border: 1px solid rgba(16, 24, 39, 0.08);
+    border-radius: 50%;
+
+    opacity: 1;
+    font-size: 16px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#projectsCarousel .carousel-control-prev {
+    left: -18px;
+}
+
+#projectsCarousel .carousel-control-next {
+    right: -18px;
+}
+
+#projectsCarousel .carousel-control-prev:hover,
+#projectsCarousel .carousel-control-next:hover {
+    background: var(--color-accent, #8959ed);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+#projectsCarousel .carousel-control-prev:focus-visible,
+#projectsCarousel .carousel-control-next:focus-visible {
+    outline: 3px solid var(--color-accent, #8959ed);
+    outline-offset: 3px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 767px) {
+
+    #projectsCarousel {
+        max-width: calc(100% - 24px);
+    }
+
+    #projectsCarousel .project-image {
+        height: 220px;
+    }
+
+    #projectsCarousel .project-content {
+        padding: 18px 16px 20px;
+    }
+
+    #projectsCarousel .project-content h3 {
+        font-size: 17px;
+    }
+
+    #projectsCarousel .project-content p {
+        font-size: 12px;
+    }
+
+    #projectsCarousel .carousel-control-prev,
+    #projectsCarousel .carousel-control-next {
+        top: 92px;
+        width: 34px;
+        height: 34px;
+    }
+
+    #projectsCarousel .carousel-control-prev {
+        left: -12px;
+    }
+
+    #projectsCarousel .carousel-control-next {
+        right: -12px;
+    }
+}
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    #projectsCarousel .carousel-control-prev,
+    #projectsCarousel .carousel-control-next {
+        transition: none;
+    }
+}

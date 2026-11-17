@@ -1,0 +1,103 @@
+
+{% load static %}
+
+<section id="projects" class="projects-section">
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="text-center mb-5">
+            <span class="projects-label">SELECTED WORK</span>
+
+            <h2 class="projects-heading">
+                Our Projects
+            </h2>
+
+            <p class="projects-subtitle">
+                Explore our work and discover the ideas,
+                creativity and solutions behind each project.
+            </p>
+        </div>
+
+        <!-- CAROUSEL -->
+        <div id="projectsCarousel"
+             class="carousel slide"
+             data-bs-ride="false">
+
+            <div class="carousel-inner">
+
+                {% for project in projects %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+
+                    <div class="project-slide">
+
+                        <div class="project-image">
+                            {% if project.image %}
+                            <img src="{{ project.image.url }}"
+                                 alt="{{ project.title }}"
+                                 loading="lazy">
+                            {% else %}
+                            <div class="project-placeholder">
+                                <i class="bi bi-image"></i>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="project-content">
+                            <h3>{{ project.title }}</h3>
+                            <p>{{ project.description }}</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                {% empty %}
+
+                {% for number in "1234" %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+
+                    <div class="project-slide">
+
+                        <div class="project-image">
+                            <img src="{% static 'services/images/project-1.jpg' %}"
+                                 alt="Example project"
+                                 loading="lazy">
+                        </div>
+
+                        <div class="project-content">
+                            <h3>Your Project {{ number }}</h3>
+                            <p>
+                                Add a description of your project here.
+                                Showcase your work, creative solutions,
+                                and the results achieved.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% endfor %}
+
+            </div>
+
+            <!-- NAVIGATION -->
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#projectsCarousel"
+                    data-bs-slide="prev">
+                <i class="bi bi-arrow-left"></i>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#projectsCarousel"
+                    data-bs-slide="next">
+                <i class="bi bi-arrow-right"></i>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,154 @@
+
+<footer class="site-footer text-white py-3">
+    <div class="container">
+
+        <!-- Contact Section -->
+        {% if request.resolver_match.url_name != 'privacy_policy' %}
+        <div class="row align-items-center justify-content-between g-4 py-3">
+
+            <!-- INFORMATION LEFT -->
+            <div class="col-md-6 col-lg-7">
+
+                <h2 class="text-white fw-semibold mb-3">
+                    Welcome to Our Company
+                </h2>
+
+                <p class="text-white-50 mb-4">
+                    We provide quality services tailored to your needs.
+                    Our goal is to deliver reliable solutions and
+                    ensure customer satisfaction.
+                </p>
+
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <i class="bi bi-check-circle fs-5 text-light"></i>
+                    <span class="text-white-50">
+                        Quality Service
+                    </span>
+                </div>
+
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <i class="bi bi-check-circle fs-5 text-light"></i>
+                    <span class="text-white-50">
+                        Customer Satisfaction
+                    </span>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-check-circle fs-5 text-light"></i>
+                    <span class="text-white-50">
+                        Trusted Experience
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- CONTACT FORM RIGHT -->
+            <div class="col-md-5 col-lg-4">
+
+                <h5 class="text-white text-center mb-1">
+                    Contact Us
+                </h5>
+
+                <p class="text-white-50 text-center small mb-3">
+                    Have a question? Send us a message.
+                </p>
+
+                <form method="post" class="footer-contact-form">
+                    {% csrf_token %}
+
+                    <div class="row g-1">
+                        {% for field in form %}
+                            <div class="{% if field.name == 'name' or field.name == 'email' %}col-6{% else %}col-12{% endif %}">
+
+                                <label for="{{ field.id_for_label }}"
+                                       class="form-label">
+                                    {{ field.label }}
+                                </label>
+
+                                {{ field }}
+
+                                {% for error in field.errors %}
+                                    <div class="text-warning small mt-1">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <button type="submit" class="btn btn-light w-100 mt-2">
+                        Send Message
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <hr class="border-secondary my-3">
+        {% endif %}
+
+        <!-- Contacts -->
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-3">
+
+            <!-- Phone -->
+            {% if settings.phone %}
+                <a href="tel:{{ settings.phone }}"
+                   class="text-white-50 text-decoration-none small">
+                    <i class="bi bi-telephone-fill me-1"></i>
+                    {{ settings.phone }}
+                </a>
+            {% endif %}
+
+            <!-- WhatsApp -->
+            {% if settings.whatsapp %}
+                <a href="https://wa.me/{{ settings.whatsapp }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-white-50 text-decoration-none small">
+                    <i class="bi bi-whatsapp text-success me-1"></i>
+                    WhatsApp
+                </a>
+            {% endif %}
+
+            <!-- Email -->
+            {% if settings.email %}
+                <a href="mailto:{{ settings.email }}"
+                   class="text-white-50 text-decoration-none small">
+                    <i class="bi bi-envelope-fill me-1"></i>
+                    {{ settings.email }}
+                </a>
+            {% endif %}
+
+            <!-- Google Maps -->
+            {% if settings.address %}
+                <a href="https://www.google.com/maps/search/?api=1&amp;query={{ settings.address|urlencode }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-white-50 text-decoration-none small">
+                    <i class="bi bi-geo-alt-fill me-1"></i>
+                    {{ settings.address }}
+                </a>
+            {% endif %}
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-3">
+
+            <small class="text-white-50">
+                &copy; {% now "Y" %}
+                {{ settings.company_name|default:"BUSINESS" }}.
+                All rights reserved.
+            </small>
+
+            <a href="{% url 'privacy_policy' %}"
+               class="text-white-50 text-decoration-none small">
+                Privacy Policy
+            </a>
+
+        </div>
+
+    </div>
+</footer>

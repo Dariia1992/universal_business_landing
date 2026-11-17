@@ -1,0 +1,353 @@
+
+/* =====================================
+   GLOBAL DESIGN SYSTEM
+===================================== */
+
+:root {
+    --color-dark: #101827;
+    --color-navy: #202b45;
+    --color-accent: #8959ed;
+    --color-accent-hover: #7446d7;
+    --color-light: #f7f8fa;
+    --color-white: #ffffff;
+    --color-text: #171923;
+    --color-muted: #777e8c;
+
+    --section-spacing: 80px;
+    --border-radius: 16px;
+}
+
+/* =====================================
+   GLOBAL
+===================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--color-text);
+    background: var(--color-white);
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+/* =====================================
+   TYPOGRAPHY
+===================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    letter-spacing: -0.5px;
+}
+
+p {
+    line-height: 1.7;
+}
+
+/* =====================================
+   GLOBAL BUTTONS
+===================================== */
+
+.btn-primary {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   HEADER / NAVIGATION
+===================================== */
+
+.site-navbar {
+    background: var(--color-dark);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+    z-index: 1030;
+}
+
+/* LOGO */
+
+.site-navbar .navbar-brand {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.site-navbar .navbar-brand:hover,
+.site-navbar .navbar-brand:focus {
+    color: #ffffff;
+}
+
+.site-navbar .navbar-brand img {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* NAVIGATION LINKS */
+
+.site-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: color 0.25s ease;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link:focus,
+.site-navbar .nav-link.active {
+    color: #b99aff;
+}
+
+/* CONTACT BUTTON */
+
+.site-navbar .btn-outline-light {
+    border: 1px solid var(--color-accent);
+    color: #ffffff;
+    background: transparent;
+    border-radius: 30px;
+    padding: 9px 22px;
+    font-weight: 500;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.site-navbar .btn-outline-light:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* MOBILE NAVIGATION */
+
+@media (max-width: 991px) {
+
+    .site-navbar .navbar-collapse {
+        padding-top: 16px;
+    }
+
+    .site-navbar .navbar-nav {
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .site-navbar .nav-link {
+        padding: 10px 0;
+    }
+
+    .site-navbar .btn-outline-light {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.site-footer {
+    background: linear-gradient(
+        135deg,
+        var(--color-dark) 0%,
+        var(--color-navy) 100%
+    );
+
+    border-top: 1px solid rgba(137, 89, 237, 0.25);
+}
+
+/* FOOTER HEADINGS */
+
+.site-footer h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.7px;
+}
+
+.site-footer h5 {
+    font-weight: 600;
+}
+
+/* BENEFITS */
+
+.site-footer .bi-check-circle {
+    color: #b99aff !important;
+}
+
+/* =====================================
+   FOOTER CONTACT FORM
+===================================== */
+
+.site-footer .footer-contact-form {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+}
+
+/* LABELS */
+
+.site-footer .footer-contact-form .form-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 4px;
+}
+
+/* INPUTS */
+
+.site-footer .footer-contact-form input,
+.site-footer .footer-contact-form textarea,
+.site-footer .footer-contact-form select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 9px 12px;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.site-footer .footer-contact-form input:focus,
+.site-footer .footer-contact-form textarea:focus,
+.site-footer .footer-contact-form select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-accent);
+    color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(137, 89, 237, 0.15);
+}
+
+/* PLACEHOLDERS */
+
+.site-footer .footer-contact-form input::placeholder,
+.site-footer .footer-contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* SELECT OPTIONS */
+
+.site-footer .footer-contact-form select option {
+    background: var(--color-navy);
+    color: #ffffff;
+}
+
+/* FORM ERRORS */
+
+.site-footer .footer-contact-form .text-warning {
+    font-size: 0.75rem;
+}
+
+/* =====================================
+   SEND MESSAGE BUTTON
+===================================== */
+
+.site-footer .footer-contact-form .btn {
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 11px;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.site-footer .footer-contact-form .btn:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   FOOTER CONTACT LINKS
+===================================== */
+
+.site-footer a.text-white-50 {
+    transition: color 0.25s ease;
+}
+
+.site-footer a.text-white-50:hover {
+    color: #b99aff !important;
+}
+
+/* DIVIDER */
+
+.site-footer hr {
+    opacity: 0.2;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 767px) {
+
+    :root {
+        --section-spacing: 55px;
+    }
+
+    .site-footer .footer-contact-form {
+        padding: 18px;
+    }
+
+    .site-footer h2 {
+        text-align: center;
+    }
+
+    .site-footer .row > div {
+        min-width: 0;
+    }
+
+    .site-footer .footer-contact-form input,
+    .site-footer .footer-contact-form textarea {
+        font-size: 16px;
+    }
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .site-navbar *,
+    .site-footer * {
+        transition: none !important;
+    }
+}

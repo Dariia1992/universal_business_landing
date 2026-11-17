@@ -1,0 +1,60 @@
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Universal Business Landing</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet"
+          href="{% static 'services/main.css' %}">
+
+    <!-- SECTION CSS -->
+    <link rel="stylesheet"
+          href="{% static 'services/forms.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'services/services.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'services/projects.css' %}">
+
+    <link rel="stylesheet" href="{% static 'services/about.css' %}">
+
+    <!-- CSS for individual pages -->
+    {% block extra_css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    {% include 'services/includes/header.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'services/includes/footer.html' %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+
+/* ===================================
+   SERVICES SECTION
+=================================== */
+
+.services-section {
+    position: relative;
+    padding: 110px 0;
+    background: linear-gradient(
+        135deg,
+        #071426 0%,
+        #111b3d 55%,
+        #271453 100%
+    );
+    overflow: hidden;
+}
+
+/* BACKGROUND GLOW */
+.services-section::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: -250px;
+    right: -150px;
+    background: #6245d9;
+    filter: blur(120px);
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.services-section::after {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 250px;
+    bottom: -180px;
+    left: -100px;
+    background: #5138c9;
+    filter: blur(110px);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.services-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+.services-label {
+    display: inline-block;
+    color: #ad83ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.services-heading {
+    color: #ffffff;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.services-subtitle {
+    color: #aeb7d0;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   SERVICE CARDS
+=================================== */
+
+.service-card {
+    position: relative;
+    padding: 42px 25px;
+    min-height: 310px;
+
+    border: 1px solid rgba(137, 112, 255, 0.45);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* HOVER EFFECT */
+.service-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #ad83ff;
+
+    background: rgba(126, 91, 255, 0.12);
+
+    box-shadow:
+        0 15px 45px rgba(94, 57, 255, 0.25);
+}
+
+/* ===================================
+   ICONS
+=================================== */
+
+.service-icon {
+    font-size: 45px;
+    color: #65c7ff;
+    margin-bottom: 28px;
+    transition: transform 0.35s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.15);
+}
+
+/* ICON COLORS */
+.services-section .row > div:nth-child(2) .service-icon {
+    color: #aa75ff;
+}
+
+.services-section .row > div:nth-child(3) .service-icon {
+    color: #38d9a9;
+}
+
+.services-section .row > div:nth-child(4) .service-icon {
+    color: #bc83ff;
+}
+
+/* ===================================
+   TEXT
+=================================== */
+
+.service-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.service-description {
+    color: #b9c2d8;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.services-empty {
+    color: #b9c2d8;
+    font-size: 16px;
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (max-width: 991px) {
+    .services-section {
+        padding: 85px 0;
+    }
+
+    .service-card {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 767px) {
+    .services-section {
+        padding: 70px 0;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 35px 25px;
+    }
+
+    .services-subtitle {
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .service-icon {
+        transition: none;
+    }
+
+    .service-card:hover {
+        transform: none;
+    }
+}
