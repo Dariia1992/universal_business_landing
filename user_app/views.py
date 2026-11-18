@@ -74,7 +74,7 @@ class CustomLoginView(LoginView):
     redirect_authenticated_user = True
 
     # Адрес, куда отправить после успешного входа
-    success_url = reverse_lazy('about')
+    success_url = reverse_lazy('home')
 
     # Переопределяем метод получения адреса
     def get_success_url(self):
